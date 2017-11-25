@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Anket Hazırlama Portalı | Anketler</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Toddler Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //stylesheet -->
+<!-- online fonts -->
+
+<!-- //online fonts -->
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+          <script>
+              $(function () {
+                  $("#btnKaydet").click(function () {
+                      var soru = $("#txtSoru").val();
+                      var cevap1 = $("#txtSec1").val();
+                      var cevap2 = $("#txtSec2").val();
+                      var cevap3 = $("#txtSec3").val();
+                      var cevap4 = $("#txtSec4").val();
+                      if (soru == "" || cevap1 == "" || cevap2 == "" || cevap3 == "" || cevap4 == "") {
+                          $("#sonuc").html("Lütfen Tüm Alanları Doldurunuz!");
+                          $("#sonuc").removeClass();
+                          $("#sonuc").addClass("alert alert-danger");
+                      }
+                      else {
+                          $("#tbKayitlar").append("<tr><td>" + soru + "</td>             <td>" + cevap1 + " <button id='btnA' class='btn btn-info'>1. Seçenek Seç</button></td><td>" + cevap2 + " <button id='btnB' class='btn btn-info'>2. Seçenek Seç</button></td><td>" + cevap3 + " <button id='btnC' class='btn btn-info'>3. Seçenek Seç</button></td><td>" + cevap4 + " <button id='btnD' class='btn btn-info'>4. Seçenek Seç</button></td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+
+                          $("#sonuc").html("4 Seçenekli Anketiniz Eklendi");
+                          $("#sonuc").removeClass();
+                          $("#sonuc").addClass("alert alert-success");
+                      }
+                      return false;
+                  });
+
+                  $(document).on("click", ".sil", function () {
+                      var satir = $(this).closest("tr");
+                      satir.remove();
+                      $("#sonuc").html("4 Seçenekli Anketiniz Silindi");
+                      $("#sonuc").removeClass();
+                      $("#sonuc").addClass("alert alert-danger");
+                      return false;
+
+                  });
+              });
+  </script>
+      <script>
+          $(function () {
+              $("#btnA").click(function () {
+                  $("#btnA").removeClass();
+                  $("#btnA").addClass("btn btn-success");
+              });
+              $("#btnB").click(function () {
+                  $("#btnB").removeClass();
+                  $("#btnB").addClass("btn btn-success");
+              });
+              $("#btnC").click(function () {
+                  $("#btnC").removeClass();
+                  $("#btnC").addClass("btn btn-success");
+              });
+              $("#btnD").click(function () {
+                  $("#btnD").removeClass();
+                  $("#btnD").addClass("btn btn-success");
+              });
+			  
+	      $("#btnKaydet2").click(function () {
+        var d = $("#txtAnket").val();
+		var e = $("#txtSecenek1").val();
+		var f = $("#txtSecenek2").val();
+		  if (d == "" || e == "") {
+             $("#YazSonuc3").html("Lütfen Tüm Alanları Doldurunuz!");
+             $("#YazSonuc3").removeClass();
+             $("#YazSonuc3").addClass("alert alert-danger");
+                      }
+                      else {
+		                          $("#tb2SecenekAnket").append("<tr><td>" + d + "</td><td><input type='radio' name='options1' id='option' autocomplete='off' checked> " + e + "</td><td><input type='radio' name='options1' id='option' autocomplete='off' checked> " + f + " </td><td><button class='btn btn-danger sill'>Sil</button></td></tr>");
+
+                          $("#YazSonuc3").html("2 Seçenekli Anketiniz Eklendi");
+                          $("#YazSonuc3").removeClass();
+                          $("#YazSonuc3").addClass("alert alert-success");
+		}
+		return false;
+		
+		
+      });
+                  $(document).on("click", ".sill", function () {
+                      var satir = $(this).closest("tr");
+                      satir.remove();
+                      $("#YazSonuc3").html("2 Seçenekli Anketiniz Silindi");
+                      $("#YazSonuc3").removeClass();
+                      $("#YazSonuc3").addClass("alert alert-danger");
+                      return false;
+
+                  });
+			  
+          });
+		  
+  </script>
+  <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tbKayitlar tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</head>
+<body>
+<div class="agileits_main">
+    <!-- header -->
+	<div class="container">
+		<div class="w3_agile_logo">
+			<h1><a href="index.html">Anket Hazırlama Portalı</a></h1>
+		</div>
+		<div class="agileits_w3layouts_nav">
+			<div id="toggle_m_nav">
+				<div id="m_nav_menu" class="m_nav">
+					<div class="m_nav_ham w3_agileits_ham" id="m_ham_1"></div>
+					<div class="m_nav_ham" id="m_ham_2"></div>
+					<div class="m_nav_ham" id="m_ham_3"></div>
+				</div>
+			</div>
+			<div id="m_nav_container" class="m_nav wthree_bg">
+				<nav class="menu menu--sebastian">
+					<ul id="m_nav_list" class="m_nav menu__list">
+						<li class="m_nav_item menu__item menu__item--current" id="m_nav_item_1"> <a href="index.htm" class="menu__link"> Anasayfa </a></li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="hakkimizda.htm" class="menu__link"> Hakkımızda </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_3"> <a href="anketler.htm" class="menu__link">Anketler</a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="iletisim.htm" class="menu__link"> İletişim </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="Admin/admingiris.htm" class="menu__link"> Giriş Yap </a> </li>
+			            <li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="Admin/index.htm" class="menu__link"> Admin Paneli </a> </li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!--// header -->
+	<!-- banner -->
+	<div class="w3_banner">
+	    <div class="container">
+		    <div class="slider">
+			    <div class="callbacks_container">
+				   <ul class="rslides callbacks callbacks1" id="slider4">
+					    <li>	
+						    <div class="banner_text_w3layouts">
+								<h3>Sitemize Hoşgeldiniz</h3>
+								<p>Anket Hazırlama Portalı</p>
+								<div class="w3-button">
+									<a href="#" data-toggle="modal" data-target="#myModal">Daha Fazla</a>
+								</div>
+						    </div>
+					    </li>
+						<li>	
+							<div class="banner_text_w3layouts">
+								<h3>Anket Nedir?</h3>
+								<p>Anketler hakkında fazlası...</p>
+								<div class="w3-button">
+									<a href="#" data-toggle="modal" data-target="#myModal">Daha Fazla</a>
+								</div>
+							</div>
+						</li>
+						<li>							
+							<div class="banner_text_w3layouts">
+								<h3>Anketler ne için kullanılır? </h3>
+								<p>Anketler hakkında fazlası...</p>
+								<div class="w3-button">
+									<a href="#" data-toggle="modal" data-target="#myModal">Daha Fazla</a>
+								</div>
+							</div>
+					    </li>
+			    	</ul>
+				</div>
+			  <script src="js/responsiveslides.min.js"></script>
+			  <script>
+				// You can also use "$(window).load(function() {"
+				$(function () {
+				  // Slideshow 4
+				  $("#slider4").responsiveSlides({
+					auto: true,
+					pager:true,
+					nav:true,
+					speed: 500,
+					namespace: "callbacks",
+					before: function () {
+					  $('.events').append("<li>before event fired.</li>");
+					},
+					after: function () {
+					  $('.events').append("<li>after event fired.</li>");
+					}
+				  });
+			
+				});
+			 </script>
+			 <script>
+$(document).ready(function(){
+    $("#btnbaslikdegis").click(function(){
+        $("#baslik1").text("Aşağıdakı kısımdan Anket ekleyebilirsiniz..");
+    });
+	    $("#btnbaslikdegis2").click(function(){
+        $("#baslik1").text("Anketler Bölümüne Hoşgeldiniz");
+    });
+    $("#btnsorguladegis").click(function(){
+        $("#baslik2").text("Ara..");
+		 $("#myInput").val("Ara..");
+    });
+	    $("#btnsorguladegis2").click(function(){
+        $("#baslik2").text("Sorgula");
+				 $("#myInput").val("Sorgula");
+    });
+});
+</script>
+		   </div>
+		</div>   
+	</div>	
+	<!-- //banner -->
+</div>
+<!-- flexSlider -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+	$(window).load(function(){
+	  $('.flexslider').flexslider({
+		animation: "slide",
+		start: function(slider){
+		  $('body').removeClass('loading');
+		}
+	  });
+	});
+  </script>
+<!-- //flexSlider -->
+
+<!-- menu -->
+<script type="text/javascript" src="js/main.js"></script>
+<!-- //menu -->
+<!-- about -->
+<div class="about_agileits" id="about">
+   <div class="container">
+	  <h3 id="baslik1" class="about_w3l text-center">Anketler Bölümüne Hoşgeldiniz</h3>
+	    <div class="about_w3layouts">
+		<h4>Yukarıdaki Başlığı aşağıdaki butondan değiştirebilirsiniz</h4>
+<button id="btnbaslikdegis" class="btn btn-success" >Başlığı Değiştir</button>
+<button id="btnbaslikdegis2" class="btn btn-success" >Başlığı Eski Haline Çevir</button>
+<br>
+<br>
+<h4>Aşağıda bulunan buton sayesinde Sorgula Kısmındaki "Sorgula" Kelimesini "Ara" yapabilirsiniz.</h4>
+<button id="btnsorguladegis" class="btn btn-success" >Sorgula Kelimesini Değiştir</button>
+<button id="btnsorguladegis2" class="btn btn-success" >Eski Haline Çevir</button>
+        <div class="container" style="margin-top:50px;">
+	      <div class="row">
+        <div class="col-md-4">
+
+            <br />
+          <label>ANKET SORUNUZ?</label>
+          <input type="text" class="form-control" id="txtSoru"/>
+          <label>1. SEÇENEK</label>
+          <input type="text" class="form-control" id="txtSec1" />
+          <label>2. SEÇENEK</label>
+          <input type="text" class="form-control" id="txtSec2" />          
+          <label>3. SEÇENEK</label>
+          <input type="text" class="form-control" id="txtSec3" />  
+          <label>4. SEÇENEK</label>
+          <input type="text" class="form-control" id="txtSec4" />  <br />
+          <button class="btn btn-success" id="btnKaydet">Anketi Kaydet</button><br /><br />
+          <div id="sonuc"></div>
+        </div>
+
+        <div class="col-md-11">
+			          <table class="table table-hover">
+  <thead>
+    <tr>
+
+            <tr>
+              <th>SORU</th>
+              <th>1. Seçenek</th>
+              <th>2. Seçenek</th>
+              <th>3. Seçenek</th>
+              <th>4. Seçenek</th>
+              <th>SİL</th>
+
+            </tr>
+			  </thead>
+			  </tr>
+  </table>
+            <table id="tbKayitlar" class="table table-hover">
+            <tr>
+              <td>Ekonomiden ne kadar anlıyorsunuz?</td>
+              <td>Çok <button id="btnA" class="btn btn-info">1. Seçenek Seç</button></td>
+              <td>Az <button id="btnB" class="btn btn-info">2. Seçenek Seç</button></td>
+              <td>Hiç Anlamam <button id="btnC" class="btn btn-info">3. Seçenek Seç</button></td>
+              <td>Soruyu beğenmedim <button id="btnD" class="btn btn-info">4. Seçenek Seç</button></td>
+              <td><button class="btn btn-danger sil">Sil</button></td>
+            </tr>
+			            <tr>
+              <td>Akdeniz Üniversitesini beğeniyor musunuz?</td>
+              <td>Evet <button id="btnA" class="btn btn-info">1. Seçenek Seç</button></td>
+              <td>Hayır <button id="btnB" class="btn btn-info">2. Seçenek Seç</button></td>
+              <td></td>
+              <td></td>
+              <td><button class="btn btn-danger sil">Sil</button></td>
+            </tr>
+          </table>
+            <br />
+            <br />
+            <br />
+
+        </div>
+							  		        <div class="col-md-1">
+		  <h2 id="baslik2">Sorgula</h2>
+		  <input id="myInput" type="text" placeholder="Sorgula...">
+		  </div>
+      </div>
+    
+    </div>	
+</div>
+ </div>
+       <script>
+          $(function () {
+              $("#btnA2").click(function () {
+                  $("#btnA2").removeClass();
+                  $("#btnA2").addClass("btn btn-success");
+              });
+              $("#btnB2").click(function () {
+                  $("#btnB2").removeClass();
+                  $("#btnB2").addClass("btn btn-success");
+              });
+			  
+          });
+		  
+  </script>
+ 
+ 
+ 	<div class="container">
+		      <div class="row">
+        <div class="col-md-4">
+          <label>Soru</label>
+          <input type="text" class="form-control" id="txtAnket"/>
+          <label>1. Seçenek</label>
+          <input type="text" class="form-control" id="txtSecenek1" />
+          <label>2. Seçenek</label>
+          <input type="text" class="form-control" id="txtSecenek2" />
+          <button class="btn btn-success" id="btnKaydet2">Ekle</button><br /><br />
+
+        </div>
+		<div class="col-md-6">
+		<br>  
+		            <table id="tb2SecenekAnket" class="table table-hover">
+            <tr class="bg-info">
+              <td>ANKET SORUNUZ?</td>
+              <td>1. SEÇENEK </td>
+			  <td>2. SEÇENEK</td>
+              <td>SİL</td>
+
+            </tr>
+            <tr>
+              <td>Asgari Ücretden Memnun Musun?</td>
+
+  <td>  <input type="radio" name="options" id="option1" autocomplete="off" checked> Evet</td>
+    <td><input type="radio" name="options" id="option2" autocomplete="off"> Hayır</td>
+              <td><button class="btn btn-danger sill">Sil</button></td>
+            </tr>
+          </table>
+		  
+          <div id="YazSonuc3"></div>
+		</div>
+		
+
+		
+	</div>
+</div>	
+ 
+
+ 
+<!--footer -->
+<div class="footer_agileits_w3layouts">
+	<div class="container">
+		<div class="footer_w3 text-center">
+			<div class="footer_copyright">
+			 <p>© 2017 Anket Hazırlama Portalı, Tüm Hakları Saklıdır | Tasarlayan: <a href="http://aniltaskan.com/">Anıl Taşkan</a></p>
+			</div> 
+		   <ul class="list-inline">
+				<li><a href="#" class="icon icon-md icon-bordered icon-white fa fa-instagram "></a></li>
+				<li><a href="#" class="icon icon-md icon-bordered icon-white fa fa-twitter "></a></li>
+				<li><a href="#" class="icon icon-md icon-bordered icon-white fa fa-facebook"></a></li>
+			</ul>
+		</div>	
+	</div>
+</div>
+
+
+<!-- //footer -->
+<!-- here starts scrolling icon -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+					var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+					};
+				*/
+										
+				$().UItoTop({ easingType: 'easeOutQuart' });
+									
+				});
+		</script>
+		
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		<!-- /ends-smoth-scrolling -->
+	<!-- //here ends scrolling icon -->
+
+
+ </body>
+</html>
